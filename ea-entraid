@@ -1,0 +1,93 @@
+resource "_entraid_enterprise_application" "ea-pXXXX-prod-rheaweb" {
+  template_name = "Custom"
+  display_name = "EA-P16409-prod-rheaweb"
+  identifier_uri = ["https://accp.docubase.XXX.net/rheaweb"]
+  redirect_uri = [
+    "https://accp.docubase.XXX.net/rheaweb/ssauth/saml/SSO",
+  ]
+
+  notification_email_addresses = [ "abdessamad.hennani@XXX.com", "jean-francois.sauvage@XXX.com","emmanuelle.deprez@XXX.com", "michael.girault@XXX.com"]
+
+  app_role_assignment_required = true
+  
+  conditional_access_configuration = [
+    "NonMobileManagedDeviceAndMfa",
+    "MobileCompliantDeviceAndMfaOmitKillSwitch"
+  ]
+
+  certificates {
+    token_signXXX_certificate {
+      id = 1
+    }
+
+    active_token_signXXX_certificate = 1
+    
+    verification_certificate {
+      key = "MIIFlzCCA3+gAwIBAgIUTEylEWfle1NUSucbByv67AaavvgwDQYJKoZIhvcNAQELBQAwUDELMAkGA1UEBhMCTkwxFzAVBgNVBAoMDklORyBHcm9lcCBOLlYuMSgwJgYDVQQDDB9JTkcgQ2xhc3MgMVIgRW50ZXJwcmlzZSBDQSAtIEc0MB4XDTI0MTIwMzEwMTI0NVoXDTI1MTIyODEwMTI0NFowIjEgMB4GA1UEAwwXc3g5MDAwMDgwMzg0LmFkLmluZy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHFoDbCAvhHvpoAxoxYKrILTcH2N1ZyP6WKqa7XVw2/21GvjRS+TAqfUuoIAU45VrST8UCZjmAoUAcUHt6GB2NwdY/6evRkH/TLbaLlaxm1m+3jll4XTESpAFlBvxMLasI4sTVTvMGyw8NyDZdTqOKsOWmtBxP0gQQQd3nbdd3BGy9FCxZp99EL6nWh91Pe2KXJ8p1onGACj7GtRyhvOfhmy05bOMH/UQHYnAUW3UkaGZwrV4on6XWBBmwxKJ4PAzsiv7jJipjoSOtyGyPWANIWcbDtAMCT3ul+e67WkHXkwTkw8HrL8s9AbUaAiN3flsryEd/TpQkh0tmkeSckIEZAgMBAAGjggGVMIIBkTAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFC04nvFl/Tt6DvvUkP1EhtNUELiXMGsGCCsGAQUFBwEBBF8wXTAyBggrBgEFBQcwAoYmaHR0cDovL3BraS5pbmcubmV0L2c0X2Mxcl9jYTAxX2VudC5jcnQwJwYIKwYBBQUHMAGGG2h0dHA6Ly9vY3NwLnBraS5pbmcubmV0L2c0LzBXBgNVHREEUDBOggxzeDkwMDAwODAzODSCF3N4OTAwMDA4MDM4My5hZC5pbmcubmV0ggxzeDkwMDAwODAzODOCF3N4OTAwMDA4MDM4NC5hZC5pbmcubmV0MBMGA1UdIAQMMAowCAYGZ4EMAQIBMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATA3BgNVHR8EMDAuMCygKqAohiZodHRwOi8vcGtpLmluZy5uZXQvZzRfYzFyX2NhMDFfZW50LmNybDAdBgNVHQ4EFgQUGtKnKOqD89qcfrKR/LCSFSs1bjYwDgYDVR0PAQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQBrVUwHyaxb4ALrqkPmyRX+NoLwo3vl0cheBt14EWaPTL71QtrW+9OAJ7MgBn3jepdY7Q3Bjt5t8rRr83pOAsbIBT3fRNoiVB1NbGb3yHCwP1X4H0B87QDyJiIT/1xUDC9phcGAHcTy0EEgy6pMX2JpEci8DlpuomsYtPiMW28Nd9VpuRtTSGkd8TXIe4Gl4wLS3lJGRnyo/qKeqNu6dcPWoj7SoUPsH+tJ9vskkJeZPTxzPBnjDMychheE9nJsd5Oafl16gLHO4UHJJB5NTCKKN7EjctT/fLBp/ZK4N1z27wLj3roguvG1Jjw6ttgKZhO6Gxjl0qp/fUMB7GKEv+YeSwHsJzZqXE31U/a5KG8XJpM0bdOIBOdw5LI24cAjB+O7zUpWfkFvYF+eOb04QJBX9us7sX5MjPV+oIZ81xa4RqIGJWDix/NS67/VLPiPZVg8z8wHdV4a+qA6+9ue5b019eORUvDObaNSylu6OD/FNRRXyAnl7U+jLvXjn5T5ePE3uB5Eyy8edXRovYQkrzTkR0IHgIRowWqJfH4xyoWrk98iJznqS/tM6gfOo8rvgTQw2gMNvmeeFyq5dg9IVQwgLCRL5nH4e4bxPuBTdxoS7xW4dBhdkXcdDGEMJSQlfjIzl9uP3pDkDX4fzZ7fvBDQb0zGHjoEiZKyyB/wdoK2RA=="
+    }
+    encryption_certificate {
+      key = "MIIFlzCCA3+gAwIBAgIUTEylEWfle1NUSucbByv67AaavvgwDQYJKoZIhvcNAQELBQAwUDELMAkGA1UEBhMCTkwxFzAVBgNVBAoMDklORyBHcm9lcCBOLlYuMSgwJgYDVQQDDB9JTkcgQ2xhc3MgMVIgRW50ZXJwcmlzZSBDQSAtIEc0MB4XDTI0MTIwMzEwMTI0NVoXDTI1MTIyODEwMTI0NFowIjEgMB4GA1UEAwwXc3g5MDAwMDgwMzg0LmFkLmluZy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHFoDbCAvhHvpoAxoxYKrILTcH2N1ZyP6WKqa7XVw2/21GvjRS+TAqfUuoIAU45VrST8UCZjmAoUAcUHt6GB2NwdY/6evRkH/TLbaLlaxm1m+3jll4XTESpAFlBvxMLasI4sTVTvMGyw8NyDZdTqOKsOWmtBxP0gQQQd3nbdd3BGy9FCxZp99EL6nWh91Pe2KXJ8p1onGACj7GtRyhvOfhmy05bOMH/UQHYnAUW3UkaGZwrV4on6XWBBmwxKJ4PAzsiv7jJipjoSOtyGyPWANIWcbDtAMCT3ul+e67WkHXkwTkw8HrL8s9AbUaAiN3flsryEd/TpQkh0tmkeSckIEZAgMBAAGjggGVMIIBkTAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFC04nvFl/Tt6DvvUkP1EhtNUELiXMGsGCCsGAQUFBwEBBF8wXTAyBggrBgEFBQcwAoYmaHR0cDovL3BraS5pbmcubmV0L2c0X2Mxcl9jYTAxX2VudC5jcnQwJwYIKwYBBQUHMAGGG2h0dHA6Ly9vY3NwLnBraS5pbmcubmV0L2c0LzBXBgNVHREEUDBOggxzeDkwMDAwODAzODSCF3N4OTAwMDA4MDM4My5hZC5pbmcubmV0ggxzeDkwMDAwODAzODOCF3N4OTAwMDA4MDM4NC5hZC5pbmcubmV0MBMGA1UdIAQMMAowCAYGZ4EMAQIBMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATA3BgNVHR8EMDAuMCygKqAohiZodHRwOi8vcGtpLmluZy5uZXQvZzRfYzFyX2NhMDFfZW50LmNybDAdBgNVHQ4EFgQUGtKnKOqD89qcfrKR/LCSFSs1bjYwDgYDVR0PAQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQBrVUwHyaxb4ALrqkPmyRX+NoLwo3vl0cheBt14EWaPTL71QtrW+9OAJ7MgBn3jepdY7Q3Bjt5t8rRr83pOAsbIBT3fRNoiVB1NbGb3yHCwP1X4H0B87QDyJiIT/1xUDC9phcGAHcTy0EEgy6pMX2JpEci8DlpuomsYtPiMW28Nd9VpuRtTSGkd8TXIe4Gl4wLS3lJGRnyo/qKeqNu6dcPWoj7SoUPsH+tJ9vskkJeZPTxzPBnjDMychheE9nJsd5Oafl16gLHO4UHJJB5NTCKKN7EjctT/fLBp/ZK4N1z27wLj3roguvG1Jjw6ttgKZhO6Gxjl0qp/fUMB7GKEv+YeSwHsJzZqXE31U/a5KG8XJpM0bdOIBOdw5LI24cAjB+O7zUpWfkFvYF+eOb04QJBX9us7sX5MjPV+oIZ81xa4RqIGJWDix/NS67/VLPiPZVg8z8wHdV4a+qA6+9ue5b019eORUvDObaNSylu6OD/FNRRXyAnl7U+jLvXjn5T5ePE3uB5Eyy8edXRovYQkrzTkR0IHgIRowWqJfH4xyoWrk98iJznqS/tM6gfOo8rvgTQw2gMNvmeeFyq5dg9IVQwgLCRL5nH4e4bxPuBTdxoS7xW4dBhdkXcdDGEMJSQlfjIzl9uP3pDkDX4fzZ7fvBDQb0zGHjoEiZKyyB/wdoK2RA=="
+      is_active = true
+    }
+  }
+  
+  group_membership_claims      = "SecurityGroup" 
+
+  optional_claims {
+    saml_2_token {
+        additional_properties = ["sam_account_name"]
+    }
+  }
+
+  roles{
+    custom {
+      display_name = "GSAPN1A_00008ok_ET_FR-DCE-ADMIN_ACC"
+      description = "admin dce"
+      assignments = ["44689eb6-1cfd-4b04-b82f-af535fd68827"]
+      value = "GSAPN1A_00008ok_ET_FR-DCE-ADMIN_ACC"
+    }
+    custom {
+      display_name = "GSAPN1A_00008ok_ET_FR_WB-Admin_ACC"
+      description = "admin wb"
+      assignments = ["0eaf3a17-9ce3-4150-994f-8183500dd0f7"]
+      value = "GSAPN1A_00008ok_ET_FR_WB-Admin_ACC"
+    }
+     custom {
+      display_name = "GSAPN1A_00008ok_ET_FR_WB-Signat_ACC"
+      description = "signataire wb"
+      assignments = ["fa15be9c-0a52-496a-aee5-fc8b9e9fd8ba"]
+      value = "GSAPN1A_00008ok_ET_FR_WB-Signat_ACC"
+    }
+     custom {
+      display_name = "GSAPN1A_00008ok_ET_FR_WB-Gedarchives_ACC"
+      description = "Ged archives acc wb"
+      assignments = ["98bc9290-93f2-43b7-a300-9ac50bf540aa"]
+      value = "GSAPN1A_00008ok_ET_FR_WB-Gedarchives_ACC"
+    }
+    custom {
+      display_name = "GSAPN1A_00008ok_ET_FR_WB-Comptabilite_ACC"
+      description = "Comptabilité acc wb"
+      assignments = ["de00022d-22ed-4673-ad30-285582055f6d"]
+      value = "GSAPN1A_00008ok_ET_FR_WB-Comptabilite_ACC"
+    }
+  }
+
+  policies {
+    claims_mappXXX_policies_assignment = resource._entraid_claims_mappXXX_policies.cmp-p16409-nonprod.id
+    token_issuance_policy_pattern = "tp_response_and_token"
+  }
+
+}
+
+
+output "metadata-rheaweb" {
+  value = resource._entraid_enterprise_application.ea-p16409-prod-rheaweb.app_metadata
+}
+
+output "id-rheaweb" {
+  value = resource._entraid_enterprise_application.ea-p16409-prod-rheaweb.id
+}
+
+output "metadata-rheaweb-identifier_uri" {
+  value = resource._entraid_enterprise_application.ea-p16409-prod-rheaweb.identifier_uri
+}
